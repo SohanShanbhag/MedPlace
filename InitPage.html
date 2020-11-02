@@ -206,11 +206,9 @@ input[type=text]:focus, input[type=password]:focus {
             // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
 		var database = firebase.database();
-		
-    index = 1;
 
 		//create a variable to hold our orders list from firebase
-		var firebaseOrdersCollection = database.ref().child('users/user' + index);
+		var firebaseOrdersCollection = database.ref().child('Users');
 
 		//this function is called when the submit button is clicked
 		function signUp() {
