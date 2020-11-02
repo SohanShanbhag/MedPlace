@@ -1,0 +1,231 @@
+<html>
+    <head>
+      
+
+    </head>
+
+    <style>
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+        opacity: 1;
+        margin-top: -100;
+      }
+
+      button{
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+        opacity: 1;
+        margin-top: -100;
+      }
+      
+    button:hover {
+        background-color: blue;
+    }
+
+    .cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+    .modal-content {
+        background-color:wheat;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: #474e5d;
+        padding-top: 50px;
+    }
+
+    input[type=text], input[type=password], input[type=email]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+
+
+.container {
+  padding: 16px;
+}
+    </style>
+
+    <body style="background-color: mediumspringgreen;">
+      <meta charset="utf-8">
+
+        <!-- <script src="MainPage.html"></script> -->
+
+      <div style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+          <h1><b>Welcome to MedPlace</b></h1>
+      </div>
+
+      <div style="text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: darkred;">
+          <h3>The best place to check out your health status!</h3>
+          <h4></h4>
+      </div>
+
+      <button type="button" onclick="document.getElementById('id01').style.display='block'">Login</button>
+      <button type="button" onclick="document.getElementById('id02').style.display='block'" style="margin-left: 90%;">Sign Up</button>
+
+      <div id="id01" class="modal">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal" >&times;</span>
+          <form class="modal-content">
+            <div class="container">
+              <h1>Log In to your Account</h1>
+              <hr>
+              <label for="usernameEmail"><b>Username/Email</b></label>
+              <input type="text" placeholder="Enter Username/Email" name="usernameEmail" required>
+        
+              <label for="password"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="password" required>
+                
+              <button type="submit" onclick="location.href=''">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="">password?</a></span>
+            </div>
+          </form>
+      </div>
+
+      <div id="id02" class="modal">
+        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal" >&times;</span>
+        <form class="modal-content">
+          <div class="container">
+            <h1>Register</h1>
+            <hr>
+            <label for="fullNameField"><b>Full Name</b></label>
+            <input type="text" placeholder="Enter Name" id="fullNameField" required>
+
+            <label for="emailField"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" id="emailField" required>
+
+            <br>
+            
+            <label for="passwordField"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="passwordField" required>
+              
+            <button name="SignUpButton" type="submit" onclick="signUp()">Sign Up</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+
+          <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="">password?</a></span>
+          </div>
+        </form>
+    </div>
+
+<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+ <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+	<script>
+
+		//Store information about your firebase so we can connect
+		
+		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		//IMPORTANT: REPLACE THESE WITH YOUR VALUES (these ones won't work)
+		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  
+		var firebaseConfig = {
+                apiKey: "AIzaSyCoJq3uyMAhLpT7gOQyA4p4I9bBIsZ9-nI",
+                authDomain: "medplace-93d38.firebaseapp.com",
+                databaseURL: "https://medplace-93d38.firebaseio.com",
+                projectId: "medplace-93d38",
+                storageBucket: "medplace-93d38.appspot.com",
+                messagingSenderId: "132323365547",
+                appId: "1:132323365547:web:30f6c7f8b5ee9d0f5f9dee"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+		var database = firebase.database();
+		
+    index = 1;
+
+		//create a variable to hold our orders list from firebase
+		var firebaseOrdersCollection = database.ref().child('users/user' + index);
+
+		//this function is called when the submit button is clicked
+		function signUp() {
+
+			//Grab order data from the form
+			var order = {
+				fullName: $('#fullNameField').val(),
+        userEmail: $("#emailField").val(),
+        userPassword: $('#passwordField').val()
+			};
+			
+			//'push' (aka add) your order to the existing list
+			firebaseOrdersCollection.push(order); //'orders' is the name of the 'collection' (aka database table)
+			
+		};
+        </script>
+    </body>
+</html>
